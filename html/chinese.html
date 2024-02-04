@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title> 扫盲 - 简体中字 - 大陆 </title>
+        <meta lang="zh-CN" charset="utf-8">
+        <style>
+            textarea{
+                resize:none;
+                position: absolute;
+                width: 75%;
+                left: 50px;
+                height:calc(50% - 150px);
+                font-size: 1.75em;
+            }
+            input[type=button]{
+                position: absolute;
+                background-color: aliceblue;
+                width:100px;
+                height:50px;
+                left:50px;
+                top: calc(50% - 25px);
+            }
+            body{
+                position: fixed;
+                color:black;
+                width: calc(100% - 100px);
+                height: calc(100% - 50px);
+                left:50px;
+                box-shadow: 0px 0px 5px 5px black;
+            }
+            
+        </style>
+        <script src="/js/chinese.js"></script>
+        <script>
+            function str2means(s){
+                var means=str[s];
+                if (means!=undefined) return means;
+                else return '';
+            }
+            function run(){
+                var s=document.getElementById("chinese").value;
+                document.getElementById("means").value=str2means(s);
+            }
+        </script>
+    </head>
+    <body>
+        <h1> 简体中字 - 大陆 </h1>
+        <textarea id="chinese" style="top:100px;"></textarea>
+        <input type="button" onclick="run()" value="Run">
+        <textarea id="means" style="bottom:100px;"></textarea>
+    </body>
+</html>
